@@ -19,3 +19,11 @@ def get_products(limit:int=10):
     return{
         "Limit":limit
     }
+
+# multiple datas
+@app.get("/items")
+def get_items(name: str=None, price :int=0):
+    return{
+        "name":name,
+        "price":price
+    }
