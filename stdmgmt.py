@@ -50,9 +50,9 @@ def delete_students(students_id:int):
     }
 
 @app.get("/lists/{students_id}")
-def getone(studentS_id:int):
+def getone(students_id:int):
     for i, list in enumerate(students):
-        if list.Id == studentS_id:
+        if list.Id == students_id:
             return{
                 "data":students[i]
             }
