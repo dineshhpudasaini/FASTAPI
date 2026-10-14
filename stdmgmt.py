@@ -18,8 +18,20 @@ def post_students(list : Students):
         "data":students
     }
 
-@app.get("/students")
+@app.get("/lists")
 def get_students():
     return{
         "data":students
+    }
+
+@app.put("/lists/{students_id}")
+def update_students(students_id : int, updated_students:Students):
+    for index, lists in enumerate (students):
+        if lists.id == students_id:
+            students[index]=updated_students
+            return{
+                "message":"Done"
+            }
+    return{
+        "error":"Not Found"
     }
