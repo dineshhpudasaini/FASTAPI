@@ -30,13 +30,13 @@ def update_todos(todo_id: int, updated_todo : Todo):
     if todo.id == todo_id:
         Todos[index] = updated_todo
         return {"message": "Todo updated"}
-    return{
-      "error":"Id not found"
-    }
+ return {
+   "message":"Error Not Found"
+ }
 
- @app.delete("/todos/{todo_id}")
- def delete_todo(todo_id:int):
-   for index , todo in enumerate(Todo):
+@app.delete("/todos/{todo_id}")
+def delete_todo(todo_id:int):
+   for index , todo in enumerate(Todos):
      if todo.id == todo_id:
        Todos.pop(index)
        return {
