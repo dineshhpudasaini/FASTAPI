@@ -24,7 +24,7 @@ def get_todos():
   "datas":Todos
  }
 
-@app.put("/todos{todo_id}")
+@app.put("/todos/{todo_id}")
 def update_todos(todo_id: int, updated_todo : Todo):
  for index, todo in enumerate(Todos):
     if todo.id == todo_id:
@@ -33,3 +33,16 @@ def update_todos(todo_id: int, updated_todo : Todo):
     return{
       "error":"Id not found"
     }
+
+ @app.delete("/todos/{todo_id}")
+ def delete_todo(todo_id:int):
+   for index , todo in enumerate(Todo):
+     if todo.id == todo_id:
+       Todos.pop(index)
+       return {
+         "message":"Todo Deleted"
+         }
+   return{
+      "message":"Error todo not found"
+    }
+      
