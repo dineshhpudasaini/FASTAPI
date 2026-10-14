@@ -17,3 +17,9 @@ def post_students(list : Students):
         "message":"studente Added",
         "data":students
     }
+
+@app.get("/students")
+def get_students():
+    return{
+        "data":students
+    }
