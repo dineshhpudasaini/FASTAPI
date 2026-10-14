@@ -48,3 +48,14 @@ def delete_students(students_id:int):
     return{
         "error":"Data Not Found"
     }
+
+@app.get("/lists/{students_id}")
+def getone(studentS_id:int):
+    for i, list in enumerate(students):
+        if list.Id == studentS_id:
+            return{
+                "data":students[i]
+            }
+    return{
+        "data":"Not found"
+    }
