@@ -35,3 +35,16 @@ def update_students(students_id : int, updated_students:Students):
     return{
         "error":"Not Found"
     }
+
+@app.delete("/lists/{students_id}")
+def delete_students(students_id:int):
+    for index , lists in enumerate(students):
+        if lists.Id == students_id:
+            students.pop(index)
+            return{
+                "message":"Deleted",
+                "data":students
+             }
+    return{
+        "error":"Data Not Found"
+    }
