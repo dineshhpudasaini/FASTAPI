@@ -26,8 +26,8 @@ def get_students():
 
 @app.put("/lists/{students_id}")
 def update_students(students_id : int, updated_students:Students):
-    for index, lists in enumerate (students):
-        if lists.id == students_id:
+    for index, lists in enumerate(students):
+        if lists.Id == students_id:
             students[index]=updated_students
             return{
                 "message":"Done"
