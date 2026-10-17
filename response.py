@@ -1,21 +1,21 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+class userinfo(BaseModel):
+    name:str
+    userid:str
+    Password:str
+
+class response(BaseModel):
+    name:str
+    userid:str
+
 app = FastAPI()
 
-class User(BaseModel):
-    name:str
-    age:int
-    password:str
- 
-class userResponse(BaseModel):
-    name:str
-    age:int
-
-@app.get("/user",response_model=userResponse)
+@app.get("/" , response_model=response)
 def get_user():
     return{
-        "nama":"Dinesh",
-        "age":19,
-        "password":"123456"
-    } 
+        "name":"Dinesh",
+        "userid":"dinesh089",
+        "password":"Password089"
+    }
