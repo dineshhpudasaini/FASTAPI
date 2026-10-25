@@ -14,7 +14,7 @@ class Students(BaseModel):
 def post_students(list : Students):
     students.append(list)
     return{
-        "message":"studente Added",
+        "message":"student Added",
         "data":students
     }
 
