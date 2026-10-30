@@ -23,7 +23,7 @@ class Todo(Base):
     title = Column(String)
     completed = Column(String)
 
-Base.modeldata.create_all(bind = engine)
+Base.metadata.create_all(bind = engine)
 
 def get_db():
     db = sessionLocal()
