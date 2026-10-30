@@ -4,7 +4,7 @@ from fastapi import FastAPI , Depends
 
 app = FastAPI()
 
-DATABASE_URL = "sqlite://./test.db"
+DATABASE_URL = "sqlite:///./test.db"
 
 engine = create_engine(
     DATABASE_URL,
